@@ -1,16 +1,38 @@
+/* general stylies*/
+body{
+    position: relative;
+}
+.bg-color1{
+    background-color: #ED8FC7;
+}
+.bg-color2{
+    background-color: #B8DD7F;
+}
+.bg-color3{
+    background-color: #98B1C5;
+}
+.bg-color4{
+    background-color:#A28FDA;
+}
+.bg-color5{
+    background-color: #D8A283;
+}
+.bg-color6{
+    background-color: #6CA8B2;
+}
 
 /* nav bar*/
 nav{
     background-color: #E3E6F3;
 }
-nav li{
+nav #navlist li{
     display: inline;
     margin-right: 6vh;
     font-weight:500; 
     list-style: none;
     position: relative;
 }
-nav li a{
+nav  #navlist li a{
     text-decoration: none;
     color: #1a1a1a; 
     font-size: 16px;
@@ -18,21 +40,49 @@ nav li a{
     transition: 0.3s ease;
 }
 
-nav li a:hover,
-nav li a.active{
+nav  #navlist li a:hover,
+nav  #navlist li a.active,
+#smallNav li a:hover,
+#smallNav li a.active
+{
     color: #088178;
 } 
-nav li a.active::after,
-nav li a:hover::after {
+nav  #navlist li a.active::after,
+nav  #navlist li a:hover::after,
+#smallNav li a.active::after,
+#smallNav li a:hover::after
+ {
     content: "";
-    width: 70%;
+    width: 30%;
     height: 2px;
     background-color: #088178;
     position: absolute;
     bottom: -4px;
     left: 0px;
 }
+#smallNav {
+    background-color: #cbccd3;
+    padding:25px;
+    position: absolute;
+    top: 0;
+    right: -250;
+    width: 250px;
+    height: 100%;
+    text-align: start;
+    font-size: 20px;
+}
+#smallNav li{
+    list-style: none;
+    margin: 15px;
+    position: relative;
 
+}
+#smallNav li a{
+    text-decoration: none;
+    color: #1a1a1a; 
+    transition: 0.3s ease;
+
+}
 /* header*/
 #header{
     background-image: url("../assets/img/hero4.png");
@@ -65,4 +115,9 @@ nav li a:hover::after {
     background-size: cover;
     width: 20vh;
     color: #088178;
+}
+
+/*features*/
+#features .feature{
+height: 200px;
 }
