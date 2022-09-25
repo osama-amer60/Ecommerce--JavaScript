@@ -1,0 +1,68 @@
+
+/* nav bar*/
+nav{
+    background-color: #E3E6F3;
+}
+nav li{
+    display: inline;
+    margin-right: 6vh;
+    font-weight:500; 
+    list-style: none;
+    position: relative;
+}
+nav li a{
+    text-decoration: none;
+    color: #1a1a1a; 
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav li a:hover,
+nav li a.active{
+    color: #088178;
+} 
+nav li a.active::after,
+nav li a:hover::after {
+    content: "";
+    width: 70%;
+    height: 2px;
+    background-color: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+}
+
+/* header*/
+#header{
+    background-image: url("../assets/img/hero4.png");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position:  top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+#header span{
+    font-size: 20px;
+    font-weight: 500;
+}
+#header h1{
+    font-size: 70px;
+}
+#header h2{
+    font-size: 50px;
+    color: #088178;
+}
+#header p{
+    color: rgb(123, 118, 118);
+}
+#header button {
+    background-image: url("../assets/img/button.png");
+    background-size: cover;
+    width: 20vh;
+    color: #088178;
+}
