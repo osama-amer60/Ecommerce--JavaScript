@@ -30,29 +30,6 @@ closeMobileNav.addEventListener("click",function(){
 )
 
 
-
-//.................................................................................
-// show features icon section
-function showFeatures(){
-    let feature = document.getElementById("feature")
-    let featureDes = ["Free Shppping","Online Order", "Save Money","Promotions","Happy Sell","F24/7 Support"]
-    let cartona =""
-    for (let i = 0; i < featureDes.length; i++) {
-         cartona+=`
-         <div class="col">
-         <div class="p-3 border shadow  text-center">
-           <img class="mb-2 w-100" src="assets/img/features/f${i+1}.png" alt="">            
-           <div class="bg-color${i+1}">${featureDes[i]}</div>
-         </div>
-       </div>
-         `       
-    }
-    // console.log(cartona)
-    feature.innerHTML = cartona
-}
-showFeatures()
-
-
 //....................................................................................................
 //featured Product section
 function showFeaturedProducts(){
@@ -60,7 +37,7 @@ function showFeaturedProducts(){
     let cartona = ""
     for (let i = 1; i < 9 ;i++) {
         cartona+=`
-        <div class="col">
+        <div class="col" role="button" onclick="getsProductPage()">
             <div class="card p-2 ">
                 <img src="assets/img/products/f${i}.jpg"  class="" alt="...">
                 <div class="card-body">
@@ -83,6 +60,9 @@ function showFeaturedProducts(){
 }
 showFeaturedProducts()
 
+function getsProductPage(){
+    window.location.href ="sProduct.html"
+}
 //..................................................................................................
 //new arrivals section
 function showNewArrivalsProducts(){
@@ -90,7 +70,7 @@ function showNewArrivalsProducts(){
     let cartona = ""
     for (let i = 1; i < 9 ;i++) {
         cartona+=`
-        <div class="col">
+        <div class="col" role="button" onclick="getsProductPage()">
             <div class="card p-2 ">
                 <img src="assets/img/products/n${i}.jpg"  class="" alt="...">
                 <div class="card-body">
@@ -112,6 +92,44 @@ function showNewArrivalsProducts(){
     newArrivals.innerHTML = cartona
 }
 showNewArrivalsProducts()
+
+//........................................................................
+// show single product page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//.................................................................................
+// show features icon section
+function showFeatures(){
+    let feature = document.getElementById("feature")
+    let featureDes = ["Free Shppping","Online Order", "Save Money","Promotions","Happy Sell","F24/7 Support"]
+    let cartona =""
+    for (let i = 0; i < featureDes.length; i++) {
+         cartona+=`
+         <div class="col">
+         <div class="p-3 border shadow  text-center">
+           <img class="mb-2 w-100" src="assets/img/features/f${i+1}.png" alt="">            
+           <div class="bg-color${i+1}">${featureDes[i]}</div>
+         </div>
+       </div>
+         `       
+    }
+    // console.log(cartona)
+     feature.innerHTML = cartona
+}
+showFeatures()
 
 
 
