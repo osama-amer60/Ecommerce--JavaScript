@@ -41,76 +41,36 @@ a:hover{
     margin: 100px 0;    
 }
 /* nav bar*/
-nav{
+.navbar-collapse{
+    flex-direction: row-reverse;
+    font-family: 'Alkalami', serif;  
+}
+.navbar{
     background-color: #E3E6F3;
     position: fixed;
     width: 100%;
     z-index: 1;
-    height: 70px;
+    font-weight: bolder;
 }
-nav #navlist li{
-    display: inline;
-    margin-right: 3vh;
-    font-weight:500; 
+.navbar li{
     list-style: none;
     position: relative;
+    margin: 1vh;    
 }
-nav  #navlist li a{
+.navbar li a{
     text-decoration: none;
     color: #1a1a1a; 
     font-size: 16px;
-    font-weight: 600;
-    transition: 0.3s ease;
 }
-
-nav  #navlist li a:hover,
-nav  #navlist li a.active,
-#mobileNav li a:hover,
-#mobileNav li a.active
-{
+.navbar li a:hover,
+.navbar li a.active{
     color: #088178;
-} 
-nav  #navlist li a.active::after,
-nav  #navlist li a:hover::after,
-#mobileNav li a.active::after,
-#mobileNav li a:hover::after
- {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background-color: #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 0px;
 }
-#mobileNav {
-    background-color: #E3E6F3;
-    box-shadow: 50px 50px 50px 50px;
-    padding:25px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100vh;
-    text-align: start;
-    font-size: 20px;
-    z-index: 5;
-}
-#mobileNav li{
-    list-style: none;
-    margin: 15px;
-    position: relative;
 
-}
-#mobileNav li a{
-    text-decoration: none;
-    color: #1a1a1a; 
-    transition: 0.3s ease;
-}
 /* header*/
 #header{
     background-image: url("../assets/img/hero4.png");
-    height: 90vh;
+    height: 99vh;
     width: 100%;
     background-size: cover;
     background-position:  top 25% right 0;
@@ -141,9 +101,7 @@ nav  #navlist li a:hover::after,
     color: #088178;
 }
 
-
 /*featured products*/
-
 .card{
     border-radius: 50px;
 }
@@ -161,9 +119,9 @@ nav  #navlist li a:hover::after,
 .card-body{
     position: relative;
 }
-.basket-icon{
+.basket-icon,
+.favorite-icon{
     position: absolute;
-    right: 20;
     bottom: 25;
     width: 40;
     height: 40;
@@ -173,7 +131,12 @@ nav  #navlist li a:hover::after,
     background-color: #E3E6F3;
     color: #088178;
 }
-
+.basket-icon{
+    right: 20;
+}
+.favorite-icon{
+    right: 70; 
+}
 /*banner*/
 #banner{
     background-image: url("../assets/img/banner/b2.jpg");
@@ -195,7 +158,6 @@ nav  #navlist li a:hover::after,
     background-size: cover;
     color: #FFF;
     padding: 60px;
-
 }
 .banner1{
     background-image: url("../assets/img/banner/b17.jpg");
@@ -231,7 +193,6 @@ nav  #navlist li a:hover::after,
     color: #FFF;
 }
 
-
 /* Newsletter section  */ 
 #Newsletter{
     background-color: #0c244e;
@@ -245,8 +206,7 @@ nav  #navlist li a:hover::after,
 #getEmail{
     display: flex;
     width: 80%;
-    padding: 20px;
-    
+    padding: 20px;    
 }
 #getEmail input{
     height: 3.125rem;
@@ -262,7 +222,6 @@ nav  #navlist li a:hover::after,
     color: #FFF;
     white-space: nowrap;
     border-radius: 0 5px 5px 0;
-
 }
 
 /* footer*/
@@ -286,8 +245,6 @@ nav  #navlist li a:hover::after,
     background-size: auto;
     background-position:  center;
     background-repeat: no-repeat;
-
-
 }
 #footer .btn2{
     background-image: url("../assets/img/pay/play.jpg");
@@ -298,7 +255,6 @@ nav  #navlist li a:hover::after,
 .copyRight{
     text-align: center;
 }
-
 
 /* shop page*/
 .page-header{
@@ -328,19 +284,32 @@ nav  #navlist li a:hover::after,
 #sProduct{
     padding-top: 7vh;
 }
-
 .product-details h2,
 .product-details h3{
     font-weight:bolder;
-
 }
 .product-details input{
     width: 10vh;
-
 }
 #sizes{
     width: 30vh;
 }
 .smallImg{
     cursor: pointer;
+}
+
+/* sigin up page*/
+.form-container{
+    padding-top: 20vh;
+    width: 50%;
+    margin: auto;
+    color: #088178;
+    font-weight: bold;
+    font-size: 20px;
+}
+.form-container label{
+    margin-bottom: 1vh;
+}
+.form-container input{
+    margin-bottom: 3vh;
 }
