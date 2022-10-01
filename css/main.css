@@ -66,6 +66,21 @@ a:hover{
 .navbar li a.active{
     color: #088178;
 }
+#basketContainer{
+    position: relative;
+}
+#baskeItemsNum{
+    background-color: #088178;
+    color: #FFF;
+    position: absolute;
+    top: -20;
+    right: -5;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: normal;
+}
 
 /* header*/
 #header{
@@ -122,6 +137,7 @@ a:hover{
 .basket-icon,
 .favorite-icon{
     position: absolute;
+    right: 20; 
     bottom: 25;
     width: 40;
     height: 40;
@@ -131,13 +147,7 @@ a:hover{
     background-color: #E3E6F3;
     color: #088178;
 }
-.basket-icon{
-    right: 20;
-}
-.favorite-icon{
-    right: 70; 
-}
-/*banner*/
+    /*banner*/
 #banner{
     background-image: url("../assets/img/banner/b2.jpg");
     background-size: cover;
@@ -283,13 +293,15 @@ a:hover{
 /*single product page*/
 #sProduct{
     padding-top: 7vh;
+    font-family:  serif;  
+
 }
 .product-details h2,
 .product-details h3{
     font-weight:bolder;
 }
 .product-details input{
-    width: 10vh;
+    width: 15vh;
 }
 #sizes{
     width: 30vh;

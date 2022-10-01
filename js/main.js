@@ -1,6 +1,148 @@
-let navBar = document.getElementById("navBar")
-let logedInNavBar =document.getElementById("logedInNavBar")
+let products = [
+  {
+    id: 1,
+    img: "assets/img/products/p1.jpg",
+    name: "T-shirt",
+    price: 70,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 2,
+    img: "assets/img/products/p2.jpg",
+    name: "T-shirt",
+    price: 150,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 3,
+    img: "assets/img/products/p3.jpg",
+    name: "T-shirt",
+    price: 300,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 4,
+    img: "assets/img/products/p4.jpg",
+    name: "T-shirt",
+    price: 250,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 5,
+    img: "assets/img/products/p5.jpg",
+    name: "T-shirt",
+    price: 350,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 6,
+    img: "assets/img/products/p6.jpg",
+    name: "T-shirt",
+    price: 1000,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 7,
+    img: "assets/img/products/p7.jpg",
+    name: "T-shirt",
+    price: 30,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 8,
+    img: "assets/img/products/p8.jpg",
+    name: "T-shirt",
+    price: 400,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 9,
+    img: "assets/img/products/p9.jpg",
+    name: "T-shirt",
+    price: 500,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 10,
+    img: "assets/img/products/p10.jpg",
+    name: "T-shirt",
+    price: 450,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 11,
+    img: "assets/img/products/p11.jpg",
+    name: "T-shirt",
+    price: 300,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 12,
+    img: "assets/img/products/p12.jpg",
+    name: "T-shirt",
+    price: 200,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 13,
+    img: "assets/img/products/p13.jpg",
+    name: "T-shirt",
+    price: 450,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 14,
+    img: "assets/img/products/p14.jpg",
+    name: "T-shirt",
+    price: 550,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 15,
+    img: "assets/img/products/p15.jpg",
+    name: "T-shirt",
+    price: 600,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+  {
+    id: 16,
+    img: "assets/img/products/p16.jpg",
+    name: "T-shirt",
+    price: 500,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae aliquam quos tempora assumenda nobis. Sint eius assumenda blanditiis nulla dolor! Numquam est aliquam nesciunt itaque eos, vero temporibus cupiditate quaerat!",
+  },
+];
+
+
+localStorage.setItem("allProducts",JSON.stringify(products))
+
+
+
+
+
+
+
+
+let navBar = document.getElementById("navBar");
+let logedInNavBar = document.getElementById("logedInNavBar");
 let logOut = document.getElementById("logOut");
+
 
 if (localStorage.getItem("userName") != null) {
   navBar.classList.add("d-none");
@@ -8,40 +150,9 @@ if (localStorage.getItem("userName") != null) {
 }
 
 logOut.addEventListener("click", function () {
-localStorage.clear()
+  localStorage.clear();
 });
 
-import { products } from './products.js';
 
-//....................................................................................................
-//featured Product section
-function showFeaturedProducts() {
-  let featuredProduct = document.getElementById("featuredProduct");
-  let cartona = "";
-  for (let i = 0; i < products.length; i++) {
-    cartona += `
-        <div class="col" role="button">
-            <div class="card p-2">
-                <img src="${products[i].img}"  alt="...">
-                <div class="card-body">
-                    <p class="card-text mb-1">adidas</p>
-                    <h5 class="card-title">Cartoon Astronaut T-Shirts</h5>
-                    <div class="mb-2">
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star "></i>
-                    <i class="fa-solid fa-star "></i>
-                    </div>
-                    <span class="price">$${products[i].price}</span>
-                    <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg"></i></div> 
-                    <div class="basket-icon"><i class="fa-solid fa-cart-shopping fa-lg"></i></div> 
-                </div>
-            </div>
-        </div>`;
-  }
-  featuredProduct.innerHTML = cartona;
-}
-showFeaturedProducts();
 
 

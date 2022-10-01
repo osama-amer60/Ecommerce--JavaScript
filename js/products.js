@@ -1,4 +1,4 @@
-   export let products = [
+   let products = [
     {
         id:1,
         img: "assets/img/products/f1.jpg",
