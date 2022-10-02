@@ -1,6 +1,7 @@
+//get all product from local storge
 let allProducts = JSON.parse(localStorage.getItem("allProducts"))
+// console.log(allProducts)
 
-console.log(allProducts)
 //.................................................................................
 // show features icon section
 function showFeatures() {
@@ -31,8 +32,8 @@ function showFeatures() {
   }
   showFeatures();
 
-  //....................................................................................................
-//featured Product section
+//....................................................................................................
+//show featured Product section
 function showFeaturedProducts() {
   let featuredProduct = document.getElementById("featuredProduct");
   let cartona = "";
@@ -61,11 +62,17 @@ function showFeaturedProducts() {
 }
 showFeaturedProducts();
 
+//..........................................................................
+// get more details about product which user chooesed
 function getProductDetails(index) {
-    console.log(allProducts[index]);
-    let productDetails = allProducts[index]
-    localStorage.setItem("productDetails",JSON.stringify(productDetails))
-    location.href = "productDetails.html"
+    if(localStorage.getItem("userName") != null){
+      let productDetails = allProducts[index]
+      // console.log(allProducts[index]);
+      localStorage.setItem("productDetails",JSON.stringify(productDetails))
+      location.href = "productDetails.html"
+    }else{
+      location.href = "signIn.html"
+    } 
 }
 
 //..................................................................................................

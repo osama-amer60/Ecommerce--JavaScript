@@ -24,7 +24,7 @@
 
         <ul class="navbar-nav" id="navBar">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="shop.html">Shop</a>
@@ -42,13 +42,13 @@
             <a href="favorite.html"> <i class="fa-regular fa-heart"></i> </a>
           </li>
           <li class="nav-item" id="basketContainer">
-            <a href="basket.html">
+            <a href="basket.html" class="active">
               <i class="fa-sharp fa-solid fa-cart-shopping"></i>
               <div id="baskeItemsNum" class="d-none"></div>
             </a>
           </li>
           <li class="nav-item">
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
           </li>  
           <li class="nav-item">
             <a href="shop.html">Shop</a>
@@ -66,12 +66,67 @@
   </nav>
 
   <!--Header-->
-  <section class="page-header">
-    <h1>#stayhome</h1>
+  <section class="page-header Cart-page">
+    <h1>#cart</h1>
     <p>save more with coupons & up to 70% off!</p>
   </section>
 
+  <!--cart items-->
+  <section id="cart">
+    <div class="container">      
+      <table class="w-100" id="table">
+        <thead>
+          <tr>
+            <th>REMOVE</th>
+            <th>ID</th>
+            <th>IMAGE</th>
+            <th>PRODUCT</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th>SUBTOTAL</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">       
+          <tr>
+            <th class="p-3 text-danger">there is no items yet</th>
+          </tr>        
+        </tbody>
+      </table>
+    </div>
+  </section>
 
+<!--total-->
+  <section class="hesap mt-5">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2">
+        <div class="col">
+           <h5>Apply Coupon</h5>
+           <input type="text" placeholder="Enter Your Coupon">
+           <button class="btn bg-main text-white">Apply</button>
+        </div>
+        <div class="col">
+          <div class="total border p-4">
+            <div class="container">
+              <h4>cart Totals</h4>
+              <div class="row row-cols-2">
+                <div class="col border">Cart Subtotal</div>
+                <div class="col border" id="subTotal"> 0 </div>
+              </div>
+              <div class="row row-cols-2">
+                <div class="col border">Taxes</div>
+                <div class="col border" id="taxes"> 3 % </div>
+              </div>   
+              <div class="row row-cols-2">
+                <div class="col border fw-bold"> Total</div>
+                <div class="col border fw-bold" id="total"> 0 </div>
+              </div>
+              <button class="btn bg-main text-white mt-3"> Proceed to checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--Newsletter-->
   <section id="Newsletter">
@@ -157,8 +212,8 @@
     </div>
   </section>
 
-    <script src="js/basket.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/basket.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

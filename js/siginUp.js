@@ -4,13 +4,12 @@ let password = document.getElementById("password");
 let repeatPassword = document.getElementById("repeatPassword");
 let warningMsg = document.querySelector(".warningMsg");
 let registrationBtn = document.getElementById("registrationBtn");
-
-
 let storgeUserName = localStorage.getItem("userName")
 let storgeEmail = localStorage.getItem("email")
 
-
-registrationBtn.addEventListener("click", function () {
+//.......................................................................
+//registration function
+function registration(){
   if (
     userName.value == "" ||
     email.value == "" ||
@@ -42,8 +41,12 @@ registrationBtn.addEventListener("click", function () {
       window.location = "signIn.html";
     }, 1500);
   }
-});
+}
+registrationBtn.addEventListener("click",registration);
 
+
+//................................................................
+// remove warning msg after some time
 function removeWarningMsg(){
     setTimeout(() => {
         warningMsg.classList.add("d-none");

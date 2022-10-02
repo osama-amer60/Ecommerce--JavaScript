@@ -6,31 +6,36 @@ let storgeUserName = localStorage.getItem("userName")
 let storgePassword = localStorage.getItem("password")
 
 
-logInBtn.addEventListener("click", function(){
-    if (
-        userName.value == "" ||
-        password.value == ""
-      ) {
-        warningMsg.classList.remove("d-none");
-        removeWarningMsg()
-      }else if (userName.value != storgeUserName) {
-        warningMsg.innerHTML = "*incorrect user name"
-        warningMsg.classList.remove("d-none");
-        removeWarningMsg()
-      }else if(password.value != storgePassword){
-        warningMsg.innerHTML = "*incorrect password"
-        warningMsg.classList.remove("d-none");
-        removeWarningMsg()
-      }else{
-        console.log(userName.value);
-        console.log(password.value);
-    
-        setTimeout(() => {
-          window.location = "index.html";
-        }, 1500);
-      }
-})
+//....................................................................
+// login Function
+function logIn(){
+  if (
+    userName.value == "" ||
+    password.value == ""
+  ) {
+    warningMsg.classList.remove("d-none");
+    removeWarningMsg()
+  }else if (userName.value != storgeUserName) {
+    warningMsg.innerHTML = "*incorrect user name"
+    warningMsg.classList.remove("d-none");
+    removeWarningMsg()
+  }else if(password.value != storgePassword){
+    warningMsg.innerHTML = "*incorrect password"
+    warningMsg.classList.remove("d-none");
+    removeWarningMsg()
+  }else{
+    console.log(userName.value);
+    console.log(password.value);
 
+    setTimeout(() => {
+      window.location = "index.html";
+    }, 1500);
+  }
+}
+logInBtn.addEventListener("click",logIn)
+
+//.........................................................................
+// remove warning msg after some time
 function removeWarningMsg(){
     setTimeout(() => {
         warningMsg.classList.add("d-none");

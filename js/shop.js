@@ -1,6 +1,7 @@
+//get all product from local storge
 let allProducts = JSON.parse(localStorage.getItem("allProducts"))
+// console.log(allProducts)
 
-console.log(allProducts)
 //....................................................................................................
 //featured Product section
 function showFeaturedProducts() {
@@ -31,9 +32,15 @@ function showFeaturedProducts() {
   }
   showFeaturedProducts();
   
-  function getProductDetails(index) {
-      console.log(allProducts[index]);
-      let productDetails = allProducts[index]
-      localStorage.setItem("productDetails",JSON.stringify(productDetails))
-      location.href = "productDetails.html"
-  }
+//..........................................................................
+// get more details about product which user chooesed
+function getProductDetails(index) {
+  if(localStorage.getItem("userName") != null){
+    console.log(allProducts[index]);
+    let productDetails = allProducts[index]
+    localStorage.setItem("productDetails",JSON.stringify(productDetails))
+    location.href = "productDetails.html"
+  }else{
+    location.href = "signIn.html"
+  } 
+}

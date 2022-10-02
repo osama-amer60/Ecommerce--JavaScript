@@ -1,3 +1,4 @@
+//all products
 let products = [
   {
     id: 1,
@@ -129,30 +130,30 @@ let products = [
   },
 ];
 
-
+// save all products in local storge
 localStorage.setItem("allProducts",JSON.stringify(products))
 
-
-
-
-
-
-
-
-let navBar = document.getElementById("navBar");
-let logedInNavBar = document.getElementById("logedInNavBar");
-let logOut = document.getElementById("logOut");
-
-
+//....................................................................................
+// navigate btween login navbar and logout navbar
 if (localStorage.getItem("userName") != null) {
+  let navBar = document.getElementById("navBar");
+  let logedInNavBar = document.getElementById("logedInNavBar");
   navBar.classList.add("d-none");
   logedInNavBar.classList.remove("d-none");
 }
-
+    
+//...................................................
+//logout 
+let logOut = document.getElementById("logOut");
 logOut.addEventListener("click", function () {
   localStorage.clear();
 });
 
-
-
-
+//..............................................................
+//show nimber of items in card on navbar
+if (localStorage.getItem("cartItems")!= null){
+  let baskeItemsNum = document.getElementById("baskeItemsNum")
+  let cartItemsLength = JSON.parse(localStorage.getItem("cartItems")).length
+  baskeItemsNum.classList.remove("d-none")
+  baskeItemsNum.innerHTML= cartItemsLength
+}
