@@ -15,7 +15,11 @@ function logIn(){
   ) {
     warningMsg.classList.remove("d-none");
     removeWarningMsg()
-  }else if (userName.value != storgeUserName) {
+  }else if (storgeUserName === null) {
+    warningMsg.innerHTML = "*user name is not exist, please register first!"
+    warningMsg.classList.remove("d-none");
+    removeWarningMsg()
+  }  else if (userName.value != storgeUserName) {
     warningMsg.innerHTML = "*incorrect user name"
     warningMsg.classList.remove("d-none");
     removeWarningMsg()

@@ -36,12 +36,16 @@ a:hover{
 .main{
     color: #088178;
 }
-#featuredProducts,
+
 #newArrivalsSection,
 #someBanners,
 #Newsletter,
 #footer{
     margin: 100px 0;    
+}
+#featuredProducts{
+    margin: 50px 0;    
+
 }
 /* nav bar*/
 .navbar-collapse{
@@ -125,6 +129,12 @@ a:hover{
 }
 .card img{
     border-radius: 50px;
+    height: 35vh;
+    padding: 5vh;
+}
+.card h5{
+    height: 10vh;
+    overflow: hidden;
 }
 .checked {
     color: orange;
@@ -282,15 +292,19 @@ a:hover{
     flex-direction: column;
     padding: 20px;
 }
+#filterCategories{
+    margin-top: 15vh;
+}
+#filterCategories select{
+    width: 25%;
+    padding: 1vh;
+    border: #088178 1px solid;
+    border-radius: 50px;
+    
+}
+
 .page-header h1{
     padding-top: 60px;
-}
-#pagination{
-    text-align: center;
-}
-#pagination button{
-    height: 6vh;
-    width: 6vh;
 }
 
 /*single product page*/
@@ -309,10 +323,9 @@ a:hover{
 #sizes{
     width: 30vh;
 }
-.smallImg{
-    cursor: pointer;
+#productImg{
+    height: 75%;
 }
-
 /* sigin up page*/
 .form-container{
     padding-top: 20vh;
@@ -351,6 +364,7 @@ a:hover{
 }
 #cart table img{
     width: 50%;
+    padding: 7px;
 }
 #cart table tbody tr td{
     padding-top: 15px;
@@ -363,4 +377,9 @@ a:hover{
     border: 1px solid #DDD;
     outline:auto #088178;
     border-radius: 5px 0 0 5px;
+}
+
+/*registrationn*/
+#registrationn {
+    font-family: cursive;
 }

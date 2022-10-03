@@ -10,8 +10,8 @@ let productName = document.getElementById("productName")
 let productPrice = document.getElementById("productPrice")
 let productDes = document.getElementById("productDetails")
 function displayProductDetails(){
-    productImg.src = productDetails.img
-    productName.innerHTML = productDetails.name
+    productImg.src = productDetails.image
+    productName.innerHTML = productDetails.title
     productPrice.innerHTML = productDetails.price 
     productDes.innerHTML = productDetails.description
 }
@@ -31,8 +31,8 @@ function addToCart(){
     if (quantity.value < 1) {quantity.value = 1 }
     let productOrder = {
         itemId : productDetails.id,
-        itemImg:productDetails.img,
-        itemTitle:productDetails.name,
+        itemImg:productDetails.image,
+        itemTitle:productDetails.title,
         itemPrice:productDetails.price,
         itemSize:sizes.value,
         itemQuantity: quantity.value,

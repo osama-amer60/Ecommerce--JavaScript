@@ -50,7 +50,7 @@
           <a href="shop.html">Shop</a>
         </li>    
         <li class="nav-item">
-          <a href="profile.html"> <i class="fa-regular fa-user"></i> User</a>
+          <a href="profile.html" id="userNavIcon"> <i class="fa-regular fa-user"></i></a>
         </li> 
         <li class="nav-item">
           <a href="" id="logOut"> log out  </a>
@@ -66,6 +66,7 @@
     <div class="container">
         <div class="form-container">
             <form action="">
+                <h2 class="text-dark text-center mb-5">Sign In</h2>
                 <label for="userName">username</label>
                 <input id="userName" type="text" class="form-control">
         
@@ -75,7 +76,7 @@
                 <div class="warningMsg text-center text-danger mb-3 d-none"> *please fill all fields</div>
                 <button id="logInBtn" type="button" class="btn btn-outline-success d-block m-auto">log in</button>
 
-                <div class="text-center mt-3">have not an account ?  <a href="signUp.html">sign Up</a></div>
+                <div class="text-center mt-3">Not registered ?  <a href="signUp.html" class="border-bottom text-danger">Create an account</a></div>
             </form>
         </div>
     </div>

@@ -37,26 +37,26 @@ function showFeatures() {
 function showFeaturedProducts() {
   let featuredProduct = document.getElementById("featuredProduct");
   let cartona = "";
-  for (let i = 0; i < allProducts.length; i++) {
+  for (let i = 0; i < 4; i++) {
     cartona += `
-        <div class="col" role="button" onclick="getProductDetails(${i})">
-            <div class="card p-2">
-                <img src="${allProducts[i].img}"  alt="...">
-                <div class="card-body">
-                    <p class="card-text mb-1">adidas</p>
-                    <h5 class="card-title">Cartoon Astronaut T-Shirts</h5>
-                    <div class="mb-2">
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star "></i>
-                    <i class="fa-solid fa-star "></i>
-                    </div>
-                    <span class="price">$${allProducts[i].price}</span>
-                    <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg"></i></div> 
-                </div>
+    <div class="col" role="button" onclick="getProductDetails(${i})">
+    <div class="card p-2">
+        <img src="${allProducts[i].image}"  alt="...">
+        <div class="card-body">
+            <p class="card-text mb-1">${allProducts[i].category}</p>
+            <h5 class="card-title">${allProducts[i].title}</h5>
+            <div class="mb-2">
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star checked"></i>
+            <i class="fa-solid fa-star "></i>
+            <i class="fa-solid fa-star "></i>
             </div>
-        </div>`;
+            <span class="price">$${allProducts[i].price}</span>
+            <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg"></i></div> 
+        </div>
+          </div>
+      </div>`;
   }
   featuredProduct.innerHTML = cartona;
 }
@@ -80,26 +80,26 @@ function getProductDetails(index) {
 function showNewArrivalsProducts() {
     let newArrivals = document.getElementById("newArrivals");
     let cartona = "";
-    for (let i = 8; i < 16; i++) {
+    for (let i =  allProducts.length -4; i < allProducts.length; i++) {
       cartona += `
-          <div class="col" role="button">
-              <div class="card p-2 ">
-                  <img src="assets/img/products/p${i}.jpg"  class="" alt="...">
-                  <div class="card-body">
-                      <p class="card-text mb-1">adidas</p>
-                      <h5 class="card-title">Cartoon Astronaut T-Shirts</h5>
-                      <div class="mb-2">
-                      <i class="fa-solid fa-star checked"></i>
-                      <i class="fa-solid fa-star checked"></i>
-                      <i class="fa-solid fa-star checked"></i>
-                      <i class="fa-solid fa-star "></i>
-                      <i class="fa-solid fa-star "></i>
-                      </div>
-                      <span class="price">$78</span>
-                      <div class="basket-icon"><i class="fa-solid fa-cart-shopping fa-lg"></i></div> 
-                  </div>
-              </div>
-          </div>`;
+        <div class="col" role="button" onclick="getProductDetails(${i})">
+        <div class="card p-2">
+            <img src="${allProducts[i].image}"  alt="...">
+            <div class="card-body">
+                <p class="card-text mb-1">${allProducts[i].category}</p>
+                <h5 class="card-title">${allProducts[i].title}</h5>
+                <div class="mb-2">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+                </div>
+                <span class="price">$${allProducts[i].price}</span>
+                <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg"></i></div> 
+            </div>
+            </div>
+        </div>`;
     }
     newArrivals.innerHTML = cartona;
   }
