@@ -57,16 +57,18 @@ getTotal()
 
 //.......................................................................................
 // delete product from cart 
-
-if (cartItems.length === 0) {
-    console.log(cartItems.length)
-    localStorage.setItem("cartItems" , null);
-    location.reload()
-
-}   
+  
 function deleteCartItem(index){
+
+    let baskeItemsNum = document.getElementById("baskeItemsNum")
         cartItems.splice(index, 1);
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
         displayCartItems();
-        location.reload()
+        baskeItemsNum.innerHTML = cartItems.length
+        if (cartItems.length === 0) {
+            console.log(cartItems.length)
+            localStorage.setItem("cartItems" , null);
+            location.reload()
+        
+        } 
 }

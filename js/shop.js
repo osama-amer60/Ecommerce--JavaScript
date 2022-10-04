@@ -27,23 +27,23 @@ function showFeaturedProducts(arr) {
   let cartona = "";
   for (let i = 0; i < arr.length; i++) {
     cartona += `
-        <div class="col" role="button" onclick="getProductDetails(${[i]})">
-            <div class="card p-2">
+        <div class="col" id="cartContainer" role="button">
+            <div class="card p-2"  onclick="getProductDetails(${[i]})">
                 <img src="${arr[i].image}"  alt="...">
                 <div class="card-body">
                     <p class="card-text mb-1">${arr[i].category}</p>
                     <h5 class="card-title">${arr[i].title}</h5>
                     <div class="mb-2">
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star "></i>
-                    <i class="fa-solid fa-star "></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star checked"></i>
+                      <i class="fa-solid fa-star "></i>
+                      <i class="fa-solid fa-star "></i>
                     </div>
                     <span class="price">$${arr[i].price}</span>
-                    <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg"></i></div> 
                 </div>
             </div>
+            <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg" onclick="getFavoriteItem(${i})"></i></div> 
         </div>`;
   }
   featuredProduct.innerHTML = cartona;
@@ -60,4 +60,23 @@ function getProductDetails(index) {
   }else{
     location.href = "signIn.html"
   } 
+}
+
+//................................................................................
+// get favorite item 
+let favoriteItemsArray = [];
+function getFavoriteItem(index){  
+  let favoriteItems = filterdArray[index]
+  let getFavoriteItems = JSON.parse(localStorage.getItem("favoriteItems"))
+  let favoriteItemsNum = document.getElementById("favoriteItemsNum")
+    if (getFavoriteItems!= null) {       
+      getFavoriteItems.push(favoriteItems)        
+      localStorage.setItem("favoriteItems",JSON.stringify(getFavoriteItems))
+      favoriteItemsNum.innerHTML= getFavoriteItems.length
+  }else{        
+    favoriteItemsArray.push(favoriteItems)
+      localStorage.setItem("favoriteItems",JSON.stringify(favoriteItemsArray))
+      favoriteItemsNum.classList.remove("d-none")
+      favoriteItemsNum.innerHTML= favoriteItemsArray.length
+  }
 }

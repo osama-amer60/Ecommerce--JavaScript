@@ -27,11 +27,20 @@ logOut.addEventListener("click", function () {
 });
 
 //..............................................................
-//show nimber of items in card on navbar
-if (localStorage.getItem("cartItems")!= null){
+//show number of items in card on navbar
+if (JSON.parse(localStorage.getItem("cartItems"))!= null){
   let baskeItemsNum = document.getElementById("baskeItemsNum")
   let cartItemsLength = JSON.parse(localStorage.getItem("cartItems")).length
   baskeItemsNum.classList.remove("d-none")
   baskeItemsNum.innerHTML= cartItemsLength
+}
+
+//..............................................................
+//show number of items in favorite on navbar
+if (JSON.parse(localStorage.getItem("favoriteItems"))!= null){
+  let favoriteItems = document.getElementById("favoriteItemsNum")
+  let favoriteItemsLength = JSON.parse(localStorage.getItem("favoriteItems")).length
+  favoriteItems.classList.remove("d-none")
+  favoriteItems.innerHTML= favoriteItemsLength
 }
 

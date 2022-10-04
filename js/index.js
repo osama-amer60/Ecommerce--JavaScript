@@ -34,33 +34,33 @@ function showFeatures() {
 
 //....................................................................................................
 //show featured Product section
-function showFeaturedProducts() {
+function showFeaturedProducts(arr) {
   let featuredProduct = document.getElementById("featuredProduct");
   let cartona = "";
   for (let i = 0; i < 4; i++) {
     cartona += `
-    <div class="col" role="button" onclick="getProductDetails(${i})">
-    <div class="card p-2">
-        <img src="${allProducts[i].image}"  alt="...">
-        <div class="card-body">
-            <p class="card-text mb-1">${allProducts[i].category}</p>
-            <h5 class="card-title">${allProducts[i].title}</h5>
-            <div class="mb-2">
-            <i class="fa-solid fa-star checked"></i>
-            <i class="fa-solid fa-star checked"></i>
-            <i class="fa-solid fa-star checked"></i>
-            <i class="fa-solid fa-star "></i>
-            <i class="fa-solid fa-star "></i>
+    <div class="col" id="cartContainer" role="button">
+        <div class="card p-2"  onclick="getProductDetails(${[i]})">
+            <img src="${arr[i].image}"  alt="...">
+            <div class="card-body">
+                <p class="card-text mb-1">${arr[i].category}</p>
+                <h5 class="card-title">${arr[i].title}</h5>
+                <div class="mb-2">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star "></i>
+                  <i class="fa-solid fa-star "></i>
+                </div>
+                <span class="price">$${arr[i].price}</span>
+                </div>
             </div>
-            <span class="price">$${allProducts[i].price}</span>
-            <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg"></i></div> 
-        </div>
-          </div>
-      </div>`;
+        <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg" onclick="getFavoriteItem(${i})"></i></div> 
+    </div>`;
   }
   featuredProduct.innerHTML = cartona;
 }
-showFeaturedProducts();
+showFeaturedProducts(allProducts);
 
 //..........................................................................
 // get more details about product which user chooesed
@@ -77,32 +77,52 @@ function getProductDetails(index) {
 
 //..................................................................................................
 //new arrivals section
-function showNewArrivalsProducts() {
+function showNewArrivalsProducts(arr) {
     let newArrivals = document.getElementById("newArrivals");
     let cartona = "";
     for (let i =  allProducts.length -4; i < allProducts.length; i++) {
       cartona += `
-        <div class="col" role="button" onclick="getProductDetails(${i})">
-        <div class="card p-2">
-            <img src="${allProducts[i].image}"  alt="...">
+      <div class="col" id="cartContainer" role="button">
+        <div class="card p-2"  onclick="getProductDetails(${[i]})">
+            <img src="${arr[i].image}"  alt="...">
             <div class="card-body">
-                <p class="card-text mb-1">${allProducts[i].category}</p>
-                <h5 class="card-title">${allProducts[i].title}</h5>
+                <p class="card-text mb-1">${arr[i].category}</p>
+                <h5 class="card-title">${arr[i].title}</h5>
                 <div class="mb-2">
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star checked"></i>
-                <i class="fa-solid fa-star "></i>
-                <i class="fa-solid fa-star "></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star "></i>
+                  <i class="fa-solid fa-star "></i>
                 </div>
-                <span class="price">$${allProducts[i].price}</span>
-                <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg"></i></div> 
+                <span class="price">$${arr[i].price}</span>
             </div>
-            </div>
-        </div>`;
+          </div>
+        <div class="favorite-icon"><i class="fa-regular fa-heart fa-lg" onclick="getFavoriteItem(${i})"></i></div> 
+      </div>`;
     }
     newArrivals.innerHTML = cartona;
   }
-  showNewArrivalsProducts();
+  showNewArrivalsProducts(allProducts);
+
+//................................................................................
+// get favorite item 
+let favoriteItemsArray = [];
+function getFavoriteItem(index){  
+  let favoriteItems = allProducts[index]
+  let getFavoriteItems = JSON.parse(localStorage.getItem("favoriteItems"))
+  let favoriteItemsNum = document.getElementById("favoriteItemsNum")
+    if (getFavoriteItems!= null) {       
+      getFavoriteItems.push(favoriteItems)        
+      localStorage.setItem("favoriteItems",JSON.stringify(getFavoriteItems))
+      favoriteItemsNum.innerHTML= getFavoriteItems.length
+  }else{        
+    favoriteItemsArray.push(favoriteItems)
+      localStorage.setItem("favoriteItems",JSON.stringify(favoriteItemsArray))
+      favoriteItemsNum.classList.remove("d-none")
+      favoriteItemsNum.innerHTML= favoriteItemsArray.length
+  }
+}
+
 
 

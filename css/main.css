@@ -76,6 +76,7 @@ a:hover{
 #basketContainer{
     position: relative;
 }
+#favoriteItemsNum,
 #baskeItemsNum{
     background-color: #088178;
     color: #FFF;
@@ -124,8 +125,13 @@ a:hover{
 }
 
 /*featured products*/
+#cartContainer{
+    position: relative;
+
+}
 .card{
     border-radius: 50px;
+
 }
 .card img{
     border-radius: 50px;
@@ -144,10 +150,7 @@ a:hover{
     font-size: 20px;
     font-weight: bold;
 }
-.card-body{
-    position: relative;
-}
-.basket-icon,
+
 .favorite-icon{
     position: absolute;
     right: 20; 
@@ -159,6 +162,9 @@ a:hover{
     border-radius: 50%;
     background-color: #E3E6F3;
     color: #088178;
+}
+.favorite-icon:hover{
+    color: red;
 }
     /*banner*/
 #banner{
@@ -382,4 +388,8 @@ a:hover{
 /*registrationn*/
 #registrationn {
     font-family: cursive;
+}
+/* favorite page*/
+#favoriteSection{
+    padding-top: 12vh;
 }

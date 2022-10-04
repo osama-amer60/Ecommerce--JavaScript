@@ -8,11 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkalami&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+     <link rel="stylesheet" href="css/main.css">
     <title>E-commerce</title>
 </head>
 <body>
 
+ 
   <!--nav bar-->
   <nav class="navbar navbar-expand-sm">
     <div class="container">      
@@ -23,7 +24,7 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav" id="navBar">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="shop.html">Shop</a>
@@ -39,9 +40,9 @@
         <ul class="navbar-nav  d-none" id="logedInNavBar">
           <li class="nav-item">
             <a href="favorite.html" class="active">
-              <i class="fa-regular fa-heart"></i>
-              <div id="favoriteItemsNum" class="d-none"></div>  
-           </a>
+               <i class="fa-regular fa-heart"></i>
+               <div id="favoriteItemsNum" class="d-none"></div>  
+            </a>
           </li>
           <li class="nav-item" id="basketContainer">
             <a href="basket.html">
@@ -50,7 +51,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
           </li>  
           <li class="nav-item">
             <a href="shop.html">Shop</a>
@@ -67,108 +68,20 @@
     </div>
   </nav>
 
-  <!--Header-->
-  <section id="header">
-    <span>Trade-in-offer</span>
-    <h1>Super Value deals</h1>
-    <h2>On all products</h2>
-    <p>save more with coupons & up to 70% off!</p>
-    <button class="btn"><a href="shop.html">Shop Now</a></button>
-  </section>
-
-  <!--features icon-->
-  <section id="features" class="mt-5 mb-5">
-    <div class="container">
-      <div id="feature" class="row  row-cols-2 row-cols-lg-3 row-cols-xl-6 g-2 g-lg">
+  <!-- favorite Items Section -->
+<section>
+    <div id="favoriteSection" class="container">
+      <div id="favoriteItems" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2 g-md-3">
 
           <!-- Js File-->
+          <h5 class="text-danger text-center pt-5 font-weight-bold">there is no favorite item yet</h5>
 
-      </div>
-    </div>    
-  </section>
-
-  <!--new arrivals -->
-  <section id="newArrivalsSection" >
-    <div class="container">
-      <h1 class="text-center">New Arrivals</h1>
-      <p class="text-center">Summer Collection New Modern Design</p>
-      <div  id="newArrivals" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2 g-md-3">
-
-          <!-- Js File-->       
 
       </div>
     </div>
-  </section>
+</section>
 
-  <!--banner-->
-  <section id="banner" class="text-center text-white">
-    <p>Repair Services</p>
-    <h1>Up to - <span> 70% Off</span> - All T-Shirts & Accessories</h1>
-    <button class="btn btn-light mt-4"> Explore More</button>
-  </section>
-
-
-  <!--featured Product Section-->
-  <section id="featuredProducts" class="">
-    <div class="container">
-      <h1 class="text-center">Featured Products</h1>
-      <p class="text-center">Summer Collection New Modern Design</p>
-      <div id="featuredProduct" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2 g-md-3">
-
-          <!-- Js File-->
-
-      </div>
-    </div>
-  </section>
-
-  <!--Some Banners-->
-  <section id="someBanners">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-lg-2 g-3">
-        <div class="col">
-          <div class="banner1">
-            <h5>Crazy deals</h5>
-            <h1>buy 1 get 1 free</h1>
-            <p>The best classic dress is on sale at cara</p>
-            <button type="button" class="btn  bg-main btn1">Learn More</button>       
-          </div>
-        </div>
-        <div class="col ">
-          <div class="banner2">
-            <h5>spring / summer</h5>
-            <h1>Upcomming season</h1>
-            <p>The best classic dress is on sale at cara</p>
-            <button type="button" class="btn btn-light btn2">Collection</button>        
-          </div>
-        </div>
-      </div>
-
-      <div class="row row-cols-1 row-cols-lg-3 g-3 mt-4">
-        <div class="col">
-          <div class="banner3">
-            <h4>SEASONAL SALE</h4>
-            <span>Winter Collection -50% Off</span>
-          </div>
-        </div>
-        <div class="col">
-          <div class="banner4">
-            <h4>NEW COLLECTION</h4>
-            <span>Spring / Summer2022</span>
-          </div>
-        </div>
-        <div class="col">
-          <div class="banner5">
-            <h4>T-SHIRTS</h4>
-            <span>New Trendy Prints</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!--Newsletter-->
+  <!-- Newsletter -->
   <section id="Newsletter">
     <div class="container">
       <div class="row row-cols-1 row-cols-lg-2">
@@ -185,7 +98,6 @@
       </div>
     </div>
   </section>
-
 
   <!--Footer-->
   <section id="footer">
@@ -254,9 +166,7 @@
   </section>
 
   <script src="js/main.js"></script>
-  <script src="js/index.js"></script>
-
+  <script src="js/favorite.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
