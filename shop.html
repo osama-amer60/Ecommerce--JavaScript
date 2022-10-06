@@ -24,10 +24,10 @@
 
         <ul class="navbar-nav" id="navBar">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop.html">Shop</a>
+            <a class="nav-link active" href="shop.html">Shop</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="signIn.html">Sign In</a>
@@ -60,7 +60,7 @@
             <a href="profile.html" id="userNavIcon"> <i class="fa-regular fa-user"></i></a>
           </li> 
           <li class="nav-item">
-            <a href="" id="logOut"> log out  </a>
+            <a href="index.html" id="logOut"> log out  </a>
           </li>  
         </ul>
 
@@ -76,17 +76,28 @@
 
 
 
-  <!--filter category-->
+  <!--filter category and search input-->
   <section id="filterCategories">
     <div class="container">
-      <label for="categories" class="form-label d-block"> Categories</label>
-      <select name="" id="categories">
-        <option value="allcategories">ALL Categories</option>
-        <option value="men's clothing">men's clothing</option>
-        <option value="women's clothing">women's clothing</option>
-        <option value="electronics">electronics</option>
-        <option value="jewelery">jewelery</option>
-      </select>
+      <div class="row">
+        <div class="col">
+          <label for="categories" class="form-label d-block"> Filter Product</label>
+          <select name="" id="categories">
+            <option value="allcategories">ALL Categories</option>
+            <option value="men's clothing">men's clothing</option>
+            <option value="women's clothing">women's clothing</option>
+            <option value="electronics">electronics</option>
+            <option value="jewelery">jewelery</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="" class="form-label d-block"> Search Product</label>
+
+          <input onkeyup="searchProducts(this.value)" type="text" id="searchInput" class="form-control w-75" placeholder="Enter product's name">
+
+        </div>
+      </div>
+     
     </div>
   </section>
 

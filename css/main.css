@@ -302,7 +302,7 @@ a:hover{
     margin-top: 15vh;
 }
 #filterCategories select{
-    width: 25%;
+    width: 50%;
     padding: 1vh;
     border: #088178 1px solid;
     border-radius: 50px;

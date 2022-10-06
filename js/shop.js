@@ -3,10 +3,9 @@ let allProducts = JSON.parse(localStorage.getItem("allProducts"))
 console.log(allProducts)
 
 //,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-// filter options
+// filter products
 function filterCategory(){
   let categories = document.getElementById("categories")
-  categories.style.borderColor = "#088178"
     if (categories.value === "allcategories") {
       showFeaturedProducts(allProducts)
       }else{
@@ -17,6 +16,21 @@ function filterCategory(){
 }
 categories.addEventListener("change",filterCategory)
 
+
+//.....................................................................
+// search Function
+function searchProducts(term) {
+  var searchProducts = [];
+  for (var i = 0; i < allProducts.length; i++) {
+    if (
+      allProducts[i].title.toLowerCase().includes(term.toLowerCase()) ==
+      true
+    ) {
+      searchProducts.push(allProducts[i]);
+    }
+  }
+  showFeaturedProducts(searchProducts);
+}
 
 //....................................................................................................
 //featured Product section
@@ -69,14 +83,18 @@ function getFavoriteItem(index){
   let favoriteItems = filterdArray[index]
   let getFavoriteItems = JSON.parse(localStorage.getItem("favoriteItems"))
   let favoriteItemsNum = document.getElementById("favoriteItemsNum")
-    if (getFavoriteItems!= null) {       
-      getFavoriteItems.push(favoriteItems)        
-      localStorage.setItem("favoriteItems",JSON.stringify(getFavoriteItems))
-      favoriteItemsNum.innerHTML= getFavoriteItems.length
-  }else{        
-    favoriteItemsArray.push(favoriteItems)
-      localStorage.setItem("favoriteItems",JSON.stringify(favoriteItemsArray))
-      favoriteItemsNum.classList.remove("d-none")
-      favoriteItemsNum.innerHTML= favoriteItemsArray.length
+  if(localStorage.getItem("userName") != null){
+        if (getFavoriteItems!= null) {       
+          getFavoriteItems.push(favoriteItems)        
+          localStorage.setItem("favoriteItems",JSON.stringify(getFavoriteItems))
+          favoriteItemsNum.innerHTML= getFavoriteItems.length
+      }else{        
+        favoriteItemsArray.push(favoriteItems)
+          localStorage.setItem("favoriteItems",JSON.stringify(favoriteItemsArray))
+          favoriteItemsNum.classList.remove("d-none")
+          favoriteItemsNum.innerHTML= favoriteItemsArray.length
+      }
+  }else{
+  location.href = "signIn.html"
   }
 }
