@@ -14,7 +14,7 @@ if ( LocalStorgeUserName!= null) {
   let navBar = document.getElementById("navBar");
   let logedInNavBar = document.getElementById("logedInNavBar");
   let userNavIcon = document.getElementById("userNavIcon")
-  userNavIcon.innerHTML = userNavIcon.innerHTML +" "+ LocalStorgeUserName 
+  userNavIcon.innerHTML = userNavIcon.innerHTML +" Hello, "+ LocalStorgeUserName 
   navBar.classList.add("d-none");
   logedInNavBar.classList.remove("d-none");
 }

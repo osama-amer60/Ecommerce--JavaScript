@@ -56,19 +56,19 @@ getTotal()
 
 
 //.......................................................................................
-// delete product from cart 
-  
-function deleteCartItem(index){
-
+// delete product from cart   
+function deleteCartItem(index){ 
     let baskeItemsNum = document.getElementById("baskeItemsNum")
         cartItems.splice(index, 1);
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        totalHesap = 0;
         displayCartItems();
         baskeItemsNum.innerHTML = cartItems.length
+        console.log(totalHesap)
+        getTotal()
         if (cartItems.length === 0) {
             console.log(cartItems.length)
             localStorage.setItem("cartItems" , null);
-            location.reload()
-        
+            location.reload()        
         } 
 }

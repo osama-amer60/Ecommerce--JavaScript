@@ -393,3 +393,27 @@ a:hover{
 #favoriteSection{
     padding-top: 12vh;
 }
+
+/* profile page*/
+#userProfile{
+    padding-top: 20vh;
+}
+#userProfile .col1{
+    background-color: #E3E6F3;
+}
+#userProfile img{
+    border-radius: 50%;
+    
+}
+#userProfile .col1 li{
+    margin-top: 25px;
+}
+#userProfile .col1 li a{
+    color: rgb(112, 104, 104);
+    cursor: pointer;
+    
+}
+#userProfile .col1 li a.active,
+#userProfile .col li a:hover{
+    color: #088178;
+}
