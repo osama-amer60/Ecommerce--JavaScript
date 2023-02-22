@@ -417,3 +417,8 @@ a:hover{
 #userProfile .col li a:hover{
     color: #088178;
 }
+
+
+.footercol4 img{
+    width: 100%;
+}
